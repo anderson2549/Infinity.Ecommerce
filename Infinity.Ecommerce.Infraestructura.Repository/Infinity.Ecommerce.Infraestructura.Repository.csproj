@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infinity.Ecommerce.Infraestructura.Data\Infinity.Ecommerce.Infraestructura.Data.csproj" />
+    <ProjectReference Include="..\Infinity.Ecommerce.Infraestructura.Interface\Infinity.Ecommerce.Infraestructura.Interface.csproj" />
+    <ProjectReference Include="..\Infinity.Ecommercer.Transversal.Common\Infinity.Ecommerce.Transversal.Common.csproj" />
+  </ItemGroup>
+
+</Project>
