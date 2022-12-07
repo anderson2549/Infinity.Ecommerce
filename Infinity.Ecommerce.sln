@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32106.194
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinity.Ecommerce.Transversal.Common", "Infinity.Ecommercer.Transversal.Common\Infinity.Ecommerce.Transversal.Common.csproj", "{18A2E94D-B9E6-4A83-A21A-B473ADC293E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Transversal.Common", "Infinity.Ecommercer.Transversal.Common\Infinity.Ecommerce.Transversal.Common.csproj", "{18A2E94D-B9E6-4A83-A21A-B473ADC293E1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transversal", "Transversal", "{AE16A693-199A-47AB-8934-CD83B0BF7748}"
 EndProject
@@ -15,21 +15,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicacion", "Aplicacion", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servicio", "Servicio", "{FE2AF77E-5C8F-4204-9725-8513958DE072}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinity.Ecommerce.Infraestructura.Data", "Infinity.Ecommerce.Infraestructura.Data\Infinity.Ecommerce.Infraestructura.Data.csproj", "{90679172-0959-4497-B12B-0E34757DB71C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Infraestructura.Data", "Infinity.Ecommerce.Infraestructura.Data\Infinity.Ecommerce.Infraestructura.Data.csproj", "{90679172-0959-4497-B12B-0E34757DB71C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinity.Ecommerce.Infraestructura.Interface", "Infinity.Ecommerce.Infraestructura.Interface\Infinity.Ecommerce.Infraestructura.Interface.csproj", "{D937F40E-CF23-4A7C-97E4-67CF75E0CB19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Infraestructura.Interface", "Infinity.Ecommerce.Infraestructura.Interface\Infinity.Ecommerce.Infraestructura.Interface.csproj", "{D937F40E-CF23-4A7C-97E4-67CF75E0CB19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinity.Ecommerce.Dominio.Entity", "Infinity.Ecommerce.Dominio.Entity\Infinity.Ecommerce.Dominio.Entity.csproj", "{C4296E79-B459-4976-A14A-CDE722ACEAD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Dominio.Entity", "Infinity.Ecommerce.Dominio.Entity\Infinity.Ecommerce.Dominio.Entity.csproj", "{C4296E79-B459-4976-A14A-CDE722ACEAD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinity.Ecommerce.Infraestructura.Repository", "Infinity.Ecommerce.Infraestructura.Repository\Infinity.Ecommerce.Infraestructura.Repository.csproj", "{A11667BD-4818-488F-B98B-C8EDB834DB88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Infraestructura.Repository", "Infinity.Ecommerce.Infraestructura.Repository\Infinity.Ecommerce.Infraestructura.Repository.csproj", "{A11667BD-4818-488F-B98B-C8EDB834DB88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinity.Ecommerce.Dominio.Interface", "Infinity.Ecommerce.Dominio.Interface\Infinity.Ecommerce.Dominio.Interface.csproj", "{F75C7806-A8DA-419D-841F-90FB755084CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Dominio.Interface", "Infinity.Ecommerce.Dominio.Interface\Infinity.Ecommerce.Dominio.Interface.csproj", "{F75C7806-A8DA-419D-841F-90FB755084CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinity.Ecommerce.Dominio.Core", "Infinity.Ecommerce.Dominio.Core\Infinity.Ecommerce.Dominio.Core.csproj", "{893C6F3C-EF7C-49C7-868F-6B7B905D21EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Dominio.Core", "Infinity.Ecommerce.Dominio.Core\Infinity.Ecommerce.Dominio.Core.csproj", "{893C6F3C-EF7C-49C7-868F-6B7B905D21EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinity.Ecommerce.Aplicacion.DTO", "Infinity.Ecommerce.Aplicacion.DTO\Infinity.Ecommerce.Aplicacion.DTO.csproj", "{5EC984FE-2E42-4037-A59F-0AA25B290813}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Aplicacion.DTO", "Infinity.Ecommerce.Aplicacion.DTO\Infinity.Ecommerce.Aplicacion.DTO.csproj", "{5EC984FE-2E42-4037-A59F-0AA25B290813}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinity.Ecommerce.Transversal.Mapper", "Infinity.Ecommerce.Transversal\Infinity.Ecommerce.Transversal.Mapper.csproj", "{C91347FF-B8AE-455F-81F3-30DAADBE2988}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Transversal.Mapper", "Infinity.Ecommerce.Transversal\Infinity.Ecommerce.Transversal.Mapper.csproj", "{C91347FF-B8AE-455F-81F3-30DAADBE2988}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Aplicacion.Inteface", "Infinity.Ecommerce.Aplicacion.Inteface\Infinity.Ecommerce.Aplicacion.Inteface.csproj", "{E1BE8BBF-0CBB-488A-9C7F-7FCB423B86AD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Aplicacion.Main", "Infinity.Ecommerce.Aplicacion.Main\Infinity.Ecommerce.Aplicacion.Main.csproj", "{DF19A84B-85D4-429F-AFDE-97F4F6A018E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinity.Ecommerce.Servicio.WebApi", "Infinity.Ecommerce.Servicio.WebApi\Infinity.Ecommerce.Servicio.WebApi.csproj", "{043E0B2D-1FDD-4CA2-B57F-A6B4A3B288FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +79,18 @@ Global
 		{C91347FF-B8AE-455F-81F3-30DAADBE2988}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C91347FF-B8AE-455F-81F3-30DAADBE2988}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C91347FF-B8AE-455F-81F3-30DAADBE2988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1BE8BBF-0CBB-488A-9C7F-7FCB423B86AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1BE8BBF-0CBB-488A-9C7F-7FCB423B86AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1BE8BBF-0CBB-488A-9C7F-7FCB423B86AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1BE8BBF-0CBB-488A-9C7F-7FCB423B86AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF19A84B-85D4-429F-AFDE-97F4F6A018E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF19A84B-85D4-429F-AFDE-97F4F6A018E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF19A84B-85D4-429F-AFDE-97F4F6A018E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF19A84B-85D4-429F-AFDE-97F4F6A018E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{043E0B2D-1FDD-4CA2-B57F-A6B4A3B288FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{043E0B2D-1FDD-4CA2-B57F-A6B4A3B288FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{043E0B2D-1FDD-4CA2-B57F-A6B4A3B288FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{043E0B2D-1FDD-4CA2-B57F-A6B4A3B288FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +105,9 @@ Global
 		{893C6F3C-EF7C-49C7-868F-6B7B905D21EE} = {AE46FC7A-644D-4FF0-8C82-A8534A23D47F}
 		{5EC984FE-2E42-4037-A59F-0AA25B290813} = {5DFF5374-6B30-4389-8C75-99DD6B5DBC76}
 		{C91347FF-B8AE-455F-81F3-30DAADBE2988} = {AE16A693-199A-47AB-8934-CD83B0BF7748}
+		{E1BE8BBF-0CBB-488A-9C7F-7FCB423B86AD} = {5DFF5374-6B30-4389-8C75-99DD6B5DBC76}
+		{DF19A84B-85D4-429F-AFDE-97F4F6A018E5} = {5DFF5374-6B30-4389-8C75-99DD6B5DBC76}
+		{043E0B2D-1FDD-4CA2-B57F-A6B4A3B288FC} = {FE2AF77E-5C8F-4204-9725-8513958DE072}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D8CA476-A241-44EF-9FA9-62B971BD6267}

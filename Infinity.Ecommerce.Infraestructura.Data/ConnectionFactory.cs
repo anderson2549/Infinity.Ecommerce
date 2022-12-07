@@ -7,7 +7,7 @@ using System.Data;
 
 namespace Infinity.Ecommerce.Infraestructura.Data
 {
-    class ConnectionFactory : IConnectionFactory
+    public class ConnectionFactory : IConnectionFactory
     {
         private readonly IConfiguration _configuration;
 

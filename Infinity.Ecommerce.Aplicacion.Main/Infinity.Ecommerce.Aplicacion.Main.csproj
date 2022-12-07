@@ -10,7 +10,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Infinity.Ecommerce.Aplicacion.DTO\Infinity.Ecommerce.Aplicacion.DTO.csproj" />
+    <ProjectReference Include="..\Infinity.Ecommerce.Aplicacion.Inteface\Infinity.Ecommerce.Aplicacion.Inteface.csproj" />
     <ProjectReference Include="..\Infinity.Ecommerce.Dominio.Entity\Infinity.Ecommerce.Dominio.Entity.csproj" />
+    <ProjectReference Include="..\Infinity.Ecommerce.Dominio.Interface\Infinity.Ecommerce.Dominio.Interface.csproj" />
+    <ProjectReference Include="..\Infinity.Ecommercer.Transversal.Common\Infinity.Ecommerce.Transversal.Common.csproj" />
   </ItemGroup>
 
 </Project>

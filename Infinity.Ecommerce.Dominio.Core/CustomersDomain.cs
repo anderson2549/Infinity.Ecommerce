@@ -22,6 +22,7 @@ namespace Infinity.Ecommerce.Dominio.Core
 
         public bool Insert(Customers customer)
         {
+            //reglas de negocio
             return _customersRepository.Insert(customer);
 
         }
