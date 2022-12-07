@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.2.32616.157
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32428.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Transversal.Common", "Infinity.Ecommercer.Transversal.Common\Infinity.Ecommerce.Transversal.Common.csproj", "{18A2E94D-B9E6-4A83-A21A-B473ADC293E1}"
 EndProject
@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Aplicaci
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Aplicacion.Main", "Infinity.Ecommerce.Aplicacion.Main\Infinity.Ecommerce.Aplicacion.Main.csproj", "{DF19A84B-85D4-429F-AFDE-97F4F6A018E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinity.Ecommerce.Servicio.WebApi", "Infinity.Ecommerce.Servicio.WebApi\Infinity.Ecommerce.Servicio.WebApi.csproj", "{043E0B2D-1FDD-4CA2-B57F-A6B4A3B288FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Ecommerce.Servicio.WebApi", "Infinity.Ecommerce.Servicio.WebApi\Infinity.Ecommerce.Servicio.WebApi.csproj", "{043E0B2D-1FDD-4CA2-B57F-A6B4A3B288FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

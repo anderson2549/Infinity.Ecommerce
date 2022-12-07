@@ -11,6 +11,7 @@ namespace Infinity.Ecommerce.Transversal.Mapper
         {
             //
             CreateMap<Customers, CustomersDto>().ReverseMap();
+            CreateMap<Clientes, ClientesDto>().ReverseMap();
 
 
             /*CreateMap<Customers, CustomersDto>().ReverseMap()

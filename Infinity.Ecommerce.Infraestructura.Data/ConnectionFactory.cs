@@ -25,7 +25,7 @@ namespace Infinity.Ecommerce.Infraestructura.Data
                 if (sqlConnection == null) return null;
 
 
-                sqlConnection.ConnectionString = _configuration.GetConnectionString("NorthwindConnection");
+                sqlConnection.ConnectionString = _configuration.GetConnectionString("GenericConex");
 
                 sqlConnection.Open();
 
