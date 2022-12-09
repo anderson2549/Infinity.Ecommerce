@@ -26,6 +26,7 @@ namespace Infinity.Ecommerce.Servicio.WebApi
 {
     public class Startup
     {
+        string politicaCor = "Cauger";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -36,12 +37,15 @@ namespace Infinity.Ecommerce.Servicio.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
 
             services.AddAutoMapper(x => x.AddProfile(new MappingsProfile()));
-
+            services.AddCors(options => options.AddPolicy("politicaCor", builder => builder.WithOrigins(Configuration["Config:OriginCors"])
+                                                                                        .AllowAnyMethod()
+                                                                                        .AllowAnyHeader()));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
-                .AddJsonOptions(options=> {
+                .AddJsonOptions(options =>
+                {
                     options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
                     options.JsonSerializerOptions.PropertyNamingPolicy = null;
                 });
@@ -50,8 +54,8 @@ namespace Infinity.Ecommerce.Servicio.WebApi
             services.AddSingleton<IConnectionFactory, ConnectionFactory>();
 
             services.AddScoped<ICustomersApplication, CustomersApplication>();
-            services.AddScoped<ICustomersDomain,CustomersDomain>();
-            services.AddScoped<ICustomersRepository,CustomersRepository>();
+            services.AddScoped<ICustomersDomain, CustomersDomain>();
+            services.AddScoped<ICustomersRepository, CustomersRepository>();
             services.AddScoped<IClientesApplication, ClientesApplication>();
             services.AddScoped<IClientesDomain, ClientesDomain>();
             services.AddScoped<IClientesRepository, ClientesRepository>();
@@ -92,14 +96,12 @@ namespace Infinity.Ecommerce.Servicio.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
             app.UseCors(x =>
             {
                 x.AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader();
+                .AllowAnyMethod()
+                .AllowAnyHeader();
             });
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
