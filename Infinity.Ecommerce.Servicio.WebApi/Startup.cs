@@ -26,7 +26,7 @@ namespace Infinity.Ecommerce.Servicio.WebApi
 {
     public class Startup
     {
-        string politicaCor = "Cauger";
+        string politicaCor = "CorsPolicy";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -38,11 +38,19 @@ namespace Infinity.Ecommerce.Servicio.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
 
+            var corsBuilder = new Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder();
+            corsBuilder.AllowAnyHeader();
+            corsBuilder.WithMethods("POST","GET","DELETE","PUT");
+            corsBuilder.AllowAnyOrigin();
+            //corsBuilder.AllowCredentials();
 
             services.AddAutoMapper(x => x.AddProfile(new MappingsProfile()));
-            services.AddCors(options => options.AddPolicy("politicaCor", builder => builder.WithOrigins(Configuration["Config:OriginCors"])
-                                                                                        .AllowAnyMethod()
-                                                                                        .AllowAnyHeader()));
+            
+            services.AddCors(options =>
+            {
+                options.AddPolicy(politicaCor, corsBuilder.Build());
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddJsonOptions(options =>
                 {
@@ -59,9 +67,6 @@ namespace Infinity.Ecommerce.Servicio.WebApi
             services.AddScoped<IClientesApplication, ClientesApplication>();
             services.AddScoped<IClientesDomain, ClientesDomain>();
             services.AddScoped<IClientesRepository, ClientesRepository>();
-
-
-            //services.AddControllers();
 
 
             services.AddSwaggerGen(c =>
@@ -96,12 +101,8 @@ namespace Infinity.Ecommerce.Servicio.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors(x =>
-            {
-                x.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader();
-            });
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -112,7 +113,8 @@ namespace Infinity.Ecommerce.Servicio.WebApi
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseCors(politicaCor);
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

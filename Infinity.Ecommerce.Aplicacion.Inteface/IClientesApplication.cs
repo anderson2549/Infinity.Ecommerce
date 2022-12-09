@@ -24,5 +24,6 @@ namespace Infinity.Ecommerce.Aplicacion.Inteface
         Task<Response<ClientesDto>> getAsync(string customerId);
         Task<Response<IEnumerable<ClientesDto>>> GetAllAsync();
         #endregion
+        Response<string> validarDatos(ClientesDto customerDto);
     }
 }

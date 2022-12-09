@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using AutoMapper;
 using System;
+using System.Text.RegularExpressions;
+
 namespace Infinity.Ecommerce.Aplicacion.Main
 {
     public class ClientesApplication : IClientesApplication
@@ -30,6 +32,13 @@ namespace Infinity.Ecommerce.Aplicacion.Main
 
             try
             {
+                var validacion = this.validarDatos(clienteDto);
+                if(!validacion.IsSuccess)
+                {
+                    response.IsSuccess = validacion.IsSuccess;
+                    response.Message = validacion.Message;
+                    return response;
+                }
                 var customer = _mapper.Map<Clientes>(clienteDto);
                 response.Data = _clientesDomain.Insert(customer);
                 if (response.Data == true)
@@ -50,6 +59,13 @@ namespace Infinity.Ecommerce.Aplicacion.Main
 
             try
             {
+                var validacion = this.validarDatos(clienteDto);
+                if (!validacion.IsSuccess)
+                {
+                    response.IsSuccess = validacion.IsSuccess;
+                    response.Message = validacion.Message;
+                    return response;
+                }
                 var customer = _mapper.Map<Clientes>(clienteDto);
                 response.Data = _clientesDomain.Update(customer);
                 if (response.Data == true)
@@ -225,6 +241,60 @@ namespace Infinity.Ecommerce.Aplicacion.Main
             {
                 response.Message = ex.Message;
             }
+            return response;
+        }
+
+        public Response<string> validarDatos(ClientesDto customerDto)
+        {
+            var response = new Response<string>();
+            string mensaje = "";
+            bool correoOK = customerDto.Correo != null && Regex.IsMatch(customerDto.Correo, "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@(([a-zA-Z]+[\\w-]+\\.){1,2}[a-zA-Z]{2,4})$");
+            if (!correoOK) {
+                mensaje += "<li type='circle'> Por favor validar correo\n";
+            }
+
+            //Validacion numero
+            int valor;
+            bool esNumero = int.TryParse((customerDto.Telefono!=null? customerDto.Telefono:"").Replace(" ",""), out valor);
+
+            if (customerDto.Telefono!= null && customerDto.Telefono.Length<10 && esNumero|| customerDto.Telefono== null)
+            {
+                
+                mensaje += "<li type='circle'> Por favor agregar un numero valido minimo 10 numeros\n";
+            }
+
+            if (customerDto.Cargo == null || customerDto.Cargo.Equals(""))
+            {
+                mensaje += "<li type='circle'> Por favor validar cargo\n";
+
+            }
+            if (customerDto.Nombres == null || customerDto.Nombres.Equals(""))
+            {
+                mensaje += "<li type='circle'> Por favor validar nombres\n";
+
+            }
+            if (customerDto.CodTipoClienteFK == null || customerDto.CodTipoClienteFK.Equals("") || customerDto.CodTipoClienteFK.Equals("0"))
+            {
+                mensaje += "<li type='circle'> Por favor validar tipo cliente\n";
+
+            }
+            if (customerDto.Usuario == null || customerDto.Usuario.Equals("") || customerDto.Usuario.Equals("0"))
+            {
+                mensaje += "<li type='circle'> Por favor validar Usuario\n";
+
+            }
+
+            if (mensaje.Equals("")) { 
+                response.IsSuccess = true;
+            }
+            else
+            {
+                response.IsSuccess = false;
+                response.Message = mensaje;
+            }
+
+
+
             return response;
         }
         #endregion

@@ -9,7 +9,6 @@ namespace Infinity.Ecommerce.Servicio.WebApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    
     public class ClientesController : Controller
     {
         private readonly IClientesApplication _clientesApplication;
@@ -57,6 +56,7 @@ namespace Infinity.Ecommerce.Servicio.WebApi.Controllers
 
 
         [HttpDelete()]
+        
         public IActionResult Delete(string idCliente)
         {
             if (string.IsNullOrEmpty(idCliente))
