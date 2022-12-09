@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Infinity.Ecommerce.Servicio.WebApi.Controllers
 {
-    [Route("api/[controller]/[action]")]
-    [ApiController]
+    //[Route("api/[controller]/[action]")]
+    //[ApiController]
     public class CustomersController : Controller
     {
         private readonly ICustomersApplication _customersApplication;

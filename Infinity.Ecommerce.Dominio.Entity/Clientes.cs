@@ -14,6 +14,6 @@ namespace Infinity.Ecommerce.Dominio.Entity
         public string Cargo { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
-        public string CodTipoClienteFK { get; set; }
+        public int CodTipoClienteFK { get; set; }
     }
 }

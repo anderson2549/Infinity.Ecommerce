@@ -1,36 +1,34 @@
-﻿using Infinity.Ecommerce.Aplicacion.Inteface;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Infinity.Ecommerce.Aplicacion.DTO;
-
+using Infinity.Ecommerce.Aplicacion.Inteface;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Infinity.Ecommerce.Servicio.WebApi.Controllers
 {
-    //[Route("api/[controller]/[action]")]
-    //[ApiController]
-    public class CustomerAsyncController : Controller
+    [Route("api/[controller]/[action]")]
+    [ApiController]
+    
+    public class ClientesController : Controller
     {
+        private readonly IClientesApplication _clientesApplication;
 
-        private readonly ICustomersApplication _customersApplication;
-
-        public CustomerAsyncController(ICustomersApplication customersApplication)
+        public ClientesController(IClientesApplication clientesApplication)
         {
-            _customersApplication = customersApplication;
+            _clientesApplication = clientesApplication;
         }
 
-
-        #region "metodos asyncronos"
-
-
+        #region "Metodo sincronos"
         [HttpPost]
-        public async Task<IActionResult> InsertAsync(CustomersDto customersDto)
+        public IActionResult Insert(ClientesDto clientesDto)
         {
-            if (customersDto == null)
+            if (clientesDto == null)
             {
                 return BadRequest();
             }
 
-            var response = await _customersApplication.InsertAsync(customersDto);
+            var response = _clientesApplication.Insert(clientesDto);
 
             if (response.IsSuccess)
             {
@@ -41,14 +39,14 @@ namespace Infinity.Ecommerce.Servicio.WebApi.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> UpdateAsync(CustomersDto customersDto)
+        public IActionResult Update(ClientesDto clientesDto)
         {
-            if (customersDto == null)
+            if (clientesDto == null)
             {
                 return BadRequest();
             }
 
-            var response = await _customersApplication.UpdateAsync(customersDto);
+            var response = _clientesApplication.Update(clientesDto);
 
             if (response.IsSuccess)
             {
@@ -59,14 +57,14 @@ namespace Infinity.Ecommerce.Servicio.WebApi.Controllers
 
 
         [HttpDelete()]
-        public async Task<IActionResult> DeleteAsync(string idCustomer)
+        public IActionResult Delete(string idCliente)
         {
-            if (string.IsNullOrEmpty(idCustomer))
+            if (string.IsNullOrEmpty(idCliente))
             {
                 return BadRequest();
             }
 
-            var response = await _customersApplication.DeleteAsync(idCustomer);
+            var response = _clientesApplication.Delete(idCliente);
 
             if (response.IsSuccess)
             {
@@ -77,14 +75,14 @@ namespace Infinity.Ecommerce.Servicio.WebApi.Controllers
 
 
         [HttpGet()]
-        public async Task<IActionResult> GetAsync(string idCustomer)
+        public IActionResult Get(string idCliente)
         {
-            if (string.IsNullOrEmpty(idCustomer))
+            if (string.IsNullOrEmpty(idCliente))
             {
                 return BadRequest();
             }
 
-            var response = await _customersApplication.getAsync(idCustomer);
+            var response = _clientesApplication.get(idCliente);
 
             if (response.IsSuccess)
             {
@@ -94,9 +92,9 @@ namespace Infinity.Ecommerce.Servicio.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public IActionResult GetAll()
         {
-            var response = await _customersApplication.GetAllAsync();
+            var response = _clientesApplication.GetAll();
 
             if (response.IsSuccess)
             {
@@ -104,7 +102,8 @@ namespace Infinity.Ecommerce.Servicio.WebApi.Controllers
             }
             return BadRequest(response.Message);
         }
-
         #endregion
+
+
     }
 }
